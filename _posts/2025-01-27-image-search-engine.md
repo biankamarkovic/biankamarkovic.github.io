@@ -1,3 +1,6 @@
+<!--
+# This is a hidden markdown
+
 ---
 layout: post
 title: Creating An Image Search Engine Using Deep Learning
@@ -471,3 +474,7 @@ We only looked at Cosine Similarity here, it would be interesting to investigate
 It would be beneficial to come up with a way to quantify the quality of the search results.  This could come from customer feedback, or from click-through rates on the site.
 
 Here we utilised VGG16. It would be worthwhile testing other available pre-trained networks such as ResNet, Inception, and the DenseNet networks.
+
+
+This content will not be visible on the webpage.
+-->
