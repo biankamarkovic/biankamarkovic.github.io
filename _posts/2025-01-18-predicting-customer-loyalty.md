@@ -493,7 +493,7 @@ The resulting *adjusted* r-squared score from this is **0.754** which as expecte
 <br>
 ### Model Summary Statistics <a name="linreg-model-summary"></a>
 
-Although our overall goal for this project is predictive accuracy, rather than an explcit understanding of the relationships of each of the input variables and the output variable, it is always interesting to look at the summary statistics for these.
+Although our overall goal for this project is predictive accuracy, rather than an explicit understanding of the relationships of each of the input variables and the output variable, it is always interesting to look at the summary statistics for these.
 <br>
 ```python
 
