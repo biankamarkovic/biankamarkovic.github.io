@@ -97,7 +97,7 @@ Application of A/B testing can range from testing different online ad strategies
 <br>
 #### Hypothesis Testing
 
-A Hypothesis Test is used to assess the plausibility, or likelihood of an assumed viewpoint based on sample data - in other words, a it helps us assess whether a certain view we have about some data is likely to be true or not.
+A Hypothesis Test is used to assess the plausibility, or likelihood of an assumed viewpoint based on sample data - in other words, it helps us assess whether a certain view we have about some data is likely to be true or not.
 
 There are many different scenarios we can run Hypothesis Tests on, and they all have slightly different techniques and formulas - however they all have some shared, fundamental steps & logic that underpin how they work.
 
@@ -114,7 +114,7 @@ The aim of the Hypothesis Test is to look for evidence to support or reject the 
 <br>
 **The Acceptance Criteria**
 
-In a Hypothesis Test, before we collect any data or run any numbers - we specify an Acceptance Criteria.  This is a p-value threshold at which we’ll decide to reject or support the null hypothesis.  It is essentially a line we draw in the sand saying "if I was to run this test many many times, what proportion of those times would I want to see different results come out, in order to feel comfortable, or confident that my results are not just some unusual occurrence"
+In a Hypothesis Test, before we collect any data or run any numbers - we specify an Acceptance Criteria.  This is a p-value threshold at which we’ll decide to reject or support the null hypothesis.  It is essentially a line we draw in the sand saying: If our test results fall beyond this line, we consider them statistically significant and say the effect is unlikely to be due to chance. Otherwise we assume any differences we see could just be by random chance.
 
 Conventionally, we set our Acceptance Criteria to 0.05 - but this does not have to be the case.  If we need to be more confident that something did not occur through chance alone, we could lower this value down to something much smaller, meaning that we only come to the conclusion that the outcome was special or rare if it’s extremely rare.
 
@@ -210,7 +210,7 @@ ___
 
 The very first thing we need to do in any form of Hypothesis Test is state our Null Hypothesis, our Alternate Hypothesis, and the Acceptance Criteria (more details on these in the section above)
 
-In the code below we code these in explcitly & clearly so we can utilise them later to explain the results.  We specify the common Acceptance Criteria value of 0.05.
+In the code below we code these in explicitly & clearly so we can utilise them later to explain the results.  We specify the common Acceptance Criteria value of 0.05.
 
 ```python
 
