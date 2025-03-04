@@ -673,9 +673,9 @@ When applying Image Augmentation using Keras' ImageDataGenerator class, we do th
 
 We apply the Image Augmentation logic into the ImageDataGenerator class that exists within our Data Pipeline.
 
-It is important to note is that we only ever do this for our training data, we don't apply any transformation on our validation or test sets.  The reason for this is that we want our validation & test data be static, and serve us better for measuring our performance over time.  If the images in these set kept changing because of transformations it would be really hard to understand if our network was actually improving, or if it was just a lucky set of validation set transformations that made it appear that is was performing better!
+It is important to note that we only ever do this for our training data, we don't apply any transformation on our validation or test sets.  The reason for this is that we want our validation & test data to be static, and serve us better for measuring our performance over time.  If the images in these set kept changing because of transformations it would be really hard to understand if our network was actually improving, or if it was just a lucky set of validation set transformations that made it appear that is was performing better!
 
-When setting up and training the baseline & Dropout networks - we used the ImageGenerator class for only one thing, to rescale the pixel values. Now we will add in the Image Augmentation parameters as well, meaning that as images flow into our network for training the transformations will be applied.
+When setting up and training the baseline & Dropout networks - we used the ImageGenerator class for only one thing, to rescale the pixel values. Now we will add in the Image Augmentation parameters aswell, meaning that as images flow into our network for training the transformations will be applied.
 
 In the code below, we add these transformations in and specify the magnitudes that we want each applied:
 
@@ -734,7 +734,7 @@ The below image shows the same two plots we analysed for the updated network, th
 <br>
 Firstly, we can see a peak Classification Accuracy on the validation set of around **97%** which is higher than the **83%** we saw for the baseline network, and higher than the **89%** we saw for the network with Dropout added.
 
-Secondly, and what we were again really looking to see, is that gap between the Classification Accuracy on the training set, and the validation set has been mostly eliminated. The two lines are trending up at more or less the same rate across all epochs of training - and the accuracy on the training set also never reach 100% as it did before meaning that Image Augmentation is also giving the network this *generalisation* that we want!
+Secondly, and what we were again really looking to see, is that gap between the Classification Accuracy on the training set, and the validation set has been mostly eliminated. The two lines are trending up at more or less the same rate across all epochs of training - and the accuracy on the training set also never reaches 100% as it did before, meaning that Image Augmentation is also giving the network this *generalisation* that we want!
 
 The reason for this is that the network is getting a slightly different version of each image each epoch during training, meaning that while it's learning features, it can't cling to a *single version* of those features!
 
@@ -753,7 +753,7 @@ Our baseline network achieved a **75% Classification Accuracy** on the test set,
 <br>
 #### Test Set Confusion Matrix
 
-As mentioned above, while overall Classification Accuracy is very useful, but it can hide what is really going on with the network's predictions!
+As mentioned above, while overall Classification Accuracy is very useful, it can hide what is really going on with the network's predictions!
 
 The standout insight for the baseline network was that Bananas has only a 20% Classification Accuracy, very frequently being confused with Lemons.  Dropout, through the additional *generalisation* forced upon the network, helped a lot - let's see how our network with Image Augmentation fares!
 
@@ -804,13 +804,13 @@ The addition of Dropout, and Image Augmentation boosted both performance and rob
 
 So far, we've just used 2 convolutional layers, each with 32 filters, and we've used a single Dense layer, also, just by coincidence, with 32 neurons - and we admitted that this was just a place to start, our baseline.
 
-One way for us to figure out if there are *better* architectures, would be to just try different things. Maybe we just double our number of filters to 64, or maybe we keep the first convolutional layer at 32, but we increase the second to 64.Perhaps we put a whole lot of neurons in our hidden layer, and then, what about things like our use of Adam as an optimizer, is this the best one for our particular problem, or should we use something else?
+One way for us to figure out if there are *better* architectures, would be to just try different things. Maybe we just double our number of filters to 64, or maybe we keep the first convolutional layer at 32, but we increase the second to 64. Perhaps we put a whole lot of neurons in our hidden layer, and then, what about things like our use of Adam as an optimizer, is this the best one for our particular problem, or should we use something else?
 
 As you can imagine, we could start testing all of these things, and noting down performances, but that would be quite messy.
 
-Here we will instead utlise *Keras Tuner* which will make this a whole lot easier for us!
+Here we will instead utilise *Keras Tuner* which will make this a whole lot easier for us!
 
-At a high level, with Keras Tuner, we will ask it to test, a whole host of different architecture and parameter options, based upon some specifications that we put in place.  It will go off and run some tests, and return us all sorts of interesting summary statistics, and of course information about what worked best.
+At a high level, with Keras Tuner, we will ask it to test a variety of different architecture and parameter options, based upon some specifications that we put in place.  It will go off and run some tests, and return us all sorts of interesting summary statistics, and of course information about what worked best.
 
 Once we have this, we can then create that particular architecture, train the network just as we've always done - and analyse the performance against our original networks.
 
@@ -908,7 +908,7 @@ def build_model(hp):
 
 ```
 <br>
-Once we have the testing logic in place - we use want to put in place the specifications for the search!
+Once we have the testing logic in place - we want to put in place the specifications for the search!
 
 In the code below, we set parameters to:
 
